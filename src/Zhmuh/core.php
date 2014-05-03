@@ -1,5 +1,7 @@
 <?php
 
+namespace Zhmuh;
+
 /**
  * Main functionality class
  *
@@ -12,6 +14,8 @@ class Core {
     public function __construct()
     {
         $this->parseRoutes(require_once 'routes.php');
+
+        return new $this;
     }
 
     /**
@@ -99,5 +103,3 @@ class Core {
         // on shutdown
     }
 }
-
-return new Core();

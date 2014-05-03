@@ -1,5 +1,7 @@
 <?php
 
+namespace Zhmuh;
+
 /**
  * PHP session wrapper
  *

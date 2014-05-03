@@ -1,5 +1,7 @@
 <?php
 
+namespace Zhmuh;
+
 /**
  * Model base class
  *

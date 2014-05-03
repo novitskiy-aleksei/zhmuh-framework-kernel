@@ -1,5 +1,7 @@
 <?php
 
+namespace Zhmuh;
+
 /**
  * View managing class
  *

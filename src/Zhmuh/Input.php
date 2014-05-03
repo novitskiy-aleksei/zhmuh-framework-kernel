@@ -1,5 +1,7 @@
 <?php
 
+namespace Zhmuh;
+
 /**
  * POST/GET input wrapper
  *

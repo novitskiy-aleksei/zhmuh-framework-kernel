@@ -1,5 +1,7 @@
 <?php
 
+namespace Zhmuh;
+
 /**
  * Database helper class
  *
