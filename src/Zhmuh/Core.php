@@ -11,11 +11,11 @@ class Core {
 
     protected $routes = [];
 
-    public function __construct()
+    public function __construct($dir)
     {
-        $this->parseRoutes(require_once 'routes.php');
+        $this->parseRoutes(require_once $dir.'/config/routes.php');
 
-        return new $this;
+        return $this;
     }
 
     /**
@@ -37,7 +37,7 @@ class Core {
     /**
      * Resolve controller/method by route
      *
-     * @throws Exception
+     * @throws InternalException
      */
     private function routeManage()
     {
@@ -48,7 +48,7 @@ class Core {
             $controller = new $ctrl;
             $controller->$mtd();
         }else{
-            throw new \Exception('404 - Route not found');
+            throw new InternalException('404 - Route not found');
         }
     }
 
@@ -62,9 +62,9 @@ class Core {
             $connect = new \Mongo();
             // access database
             Db::$db = $connect->{Db::DB_NAME};
-        } catch (MongoConnectionException $e) {
+        } catch (\MongoConnectionException $e) {
             die('Error connecting to MongoDB server');
-        } catch (MongoException $e) {
+        } catch (\MongoException $e) {
             die('Error: ' . $e->getMessage());
         }
     }
