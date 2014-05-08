@@ -96,7 +96,7 @@ class Core {
     }
 
     /**
-     * Called before app death
+     * Called before app dies
      */
     public function shutdown()
     {
